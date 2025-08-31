@@ -4,7 +4,7 @@ import Transaction from "../models/Transaction.js";
 import User from "../models/User.js";
 
 export const stripeWebhooks = async (req , res) => {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_SECRET)
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
     const sig = req.headers["stripe-signature"]
 
     let event;
@@ -47,7 +47,7 @@ export const stripeWebhooks = async (req , res) => {
                 
                 break;
         }
-        res.json
+        res.json({received : true})
 
     } catch (error) {
         console.error("Webhook processing error :" , error);

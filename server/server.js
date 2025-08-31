@@ -9,7 +9,7 @@ import creditRouter from './routes/creditRoutes.js'
 import { stripeWebhooks } from './controllers/webhooks.js'
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = 3000
 
 await connectDB()
 
